@@ -1,0 +1,274 @@
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+}
+
+:root {
+    --primary-color: #ff6b6b;
+    --primary-hover: #ff5252;
+    --link-color: #007bff;
+    --link-hover: #0056b3;
+    --input-bg: #f8f9fd;
+    --text-color: #333;
+    --text-secondary: #666;
+    --border-color: #e1e1e1;
+}
+
+html {
+    font-size: 16px;
+}
+
+body {
+    min-height: 100vh;
+    min-height: -webkit-fill-available;
+    /* For mobile browsers */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(255, 255, 255);
+    padding: 1rem;
+}
+
+/* Container Styles */
+.container {
+    width: 100%;
+    max-width: 400px;
+    padding: clamp(1rem, 5vw, 2rem);
+    margin: auto;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+/* Logo Styles */
+.logo-container {
+    text-align: center;
+    margin-bottom: clamp(2rem, 6vw, 3rem);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+.logo-image {
+    width: clamp(40px, 8vw, 48px);
+    height: clamp(40px, 8vw, 48px);
+    animation: pulse 2s infinite;
+}
+
+.logo-container h1 {
+    font-size: clamp(1.25rem, 4vw, 1.5rem);
+    font-weight: 600;
+    color: var(--text-color);
+}
+
+/* Form Styles */
+.login-form {
+    display: flex;
+    flex-direction: column;
+    gap: clamp(1.25rem, 4vw, 1.5rem);
+    width: 100%;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    width: 100%;
+}
+
+.form-group label {
+    font-size: clamp(0.875rem, 2.5vw, 0.9rem);
+    color: var(--text-color);
+}
+
+.form-group input {
+    width: 100%;
+    padding: clamp(0.625rem, 2vw, 0.75rem);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    font-size: clamp(0.875rem, 2.5vw, 0.9rem);
+    background-color: var(--input-bg);
+    transition: all 0.3s ease;
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: var(--link-color);
+    box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.1);
+}
+
+/* Link Styles */
+.forgot-password {
+    align-self: flex-end;
+    color: var(--link-color);
+    text-decoration: none;
+    font-size: clamp(0.8rem, 2.5vw, 0.9rem);
+    transition: color 0.3s ease;
+}
+
+.forgot-password:hover {
+    color: var(--link-hover);
+}
+
+/* Button Styles */
+.sign-in-btn {
+    width: 100%;
+    background-color: var(--primary-color);
+    color: white;
+    padding: clamp(0.625rem, 2vw, 0.75rem);
+    border: none;
+    border-radius: 8px;
+    font-size: clamp(0.9rem, 3vw, 1rem);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    -webkit-tap-highlight-color: transparent;
+    /* Remove tap highlight on mobile */
+}
+
+.sign-in-btn:hover {
+    background-color: var(--primary-hover);
+    transform: translateY(-1px);
+}
+
+.sign-in-btn:active {
+    transform: translateY(0);
+}
+
+/* Sign Up Text Styles */
+.signup-text {
+    text-align: center;
+    color: var(--text-secondary);
+    font-size: clamp(0.8rem, 2.5vw, 0.9rem);
+}
+
+.signup-link {
+    color: var(--link-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.signup-link:hover {
+    color: var(--link-hover);
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.05);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* Media Queries */
+/* Small devices (phones, 360px and up) */
+@media screen and (min-width: 360px) {
+    html {
+        font-size: 14px;
+    }
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media screen and (min-width: 768px) {
+    html {
+        font-size: 16px;
+    }
+
+    .container {
+        padding: 2rem;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        border-radius: 12px;
+    }
+}
+
+/* Large devices (desktops, 1024px and up) */
+@media screen and (min-width: 1024px) {
+    .container {
+        padding: 2.5rem;
+    }
+}
+
+/* Extra large devices (large desktops, 1280px and up) */
+@media screen and (min-width: 1280px) {
+    html {
+        font-size: 18px;
+    }
+}
+
+/* Landscape Mode */
+@media screen and (max-height: 500px) and (orientation: landscape) {
+    body {
+        align-items: flex-start;
+        padding: 1rem;
+    }
+
+    .container {
+        margin: 0 auto;
+    }
+
+    .logo-container {
+        margin-bottom: 1.5rem;
+    }
+}
+
+/* Dark Mode Support */
+@media (prefers-color-scheme: dark) {
+    body {
+        background-color: #ffffff;
+    }
+
+    .container {
+        background-color: #f0f1e7;
+        border-radius: 10px;
+    }
+
+    .logo-container h1 {
+        color: #121111;
+    }
+
+    .form-group label {
+        color: #020202;
+    }
+
+    .form-group input {
+        background-color: #dad2d2;
+        border-color: #404040;
+        color: #ffffff;
+    }
+
+    .signup-text {
+        color: #312d2d;
+    }
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+
+    .container,
+    .logo-image,
+    .sign-in-btn,
+    .form-group input {
+        animation: none;
+        transition: none;
+    }
+}

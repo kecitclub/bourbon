@@ -1,0 +1,230 @@
+<% layout('../layouts/boilerplate') -%>
+<style>
+    
+.teaching {
+    border-radius: 2rem;
+    width: 20vw;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 4rem 5%;
+}
+
+
+
+
+h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    color: var(--primary-color);
+    position: relative;
+    display: inline-block;
+}
+
+h1::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 60%;
+    height: 3px;
+    background: var(--primary-color);
+    animation: expandLine 1s ease forwards;
+}
+
+@keyframes expandLine {
+    from {
+        width: 0;
+    }
+
+    to {
+        width: 60%;
+    }
+}
+
+.opportunities {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 10vh 10vw;
+    margin-bottom: 4rem;
+}
+
+.opportunity-card {
+    background: #f8f8f8;
+    padding: 2.5rem;
+    border-radius: 15px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    min-height: 220px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border: 1px solid #eee;
+}
+
+.opportunity-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(188, 70, 69, 0.1);
+    background: #fff;
+    border-color: var(--primary-color);
+}
+
+.opportunity-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: var(--primary-color);
+}
+
+.opportunity-card p {
+    color: #666;
+    line-height: 1.6;
+}
+
+.applybox {
+    box-sizing: border-box;
+    width: 80vw;
+    height: 25vh;
+    margin: 0 auto;
+    padding: 25px;
+    background-color: #f1f1f1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center; 
+    border: 2px solid rgb(209, 70, 70);
+    position: relative;
+    border-radius: 14px;
+}
+
+.applytext {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.applybox .heading {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    font-weight: 700;
+    text-decoration: none;
+    color: #000;
+    position: relative;
+}
+
+
+.applybox .paragraph {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    font-weight: 400;
+    position: relative;
+    top: -1rem;
+}
+
+.applybtn {
+    align-self: center;
+    padding: 0.5rem 1rem;
+    background-color: #d63131;
+    border-radius: 14px;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 400;
+    transition: all 0.3s ease;
+}
+
+.applybtn:hover {
+    background-color: #fffdfd;
+    color: #000000;
+}
+
+@media screen and (max-width: 768px) {
+    .applybox {
+        height: 40vh;
+        justify-content: space-around;
+    }
+
+    .applytext {
+        padding: 0 2rem;
+    }
+}
+</style>
+<body>
+
+    <div class="container">
+        <div class="header">
+            <h1>Project Listing</h1>
+            <p>Short Intro</p>
+        </div>
+
+        <div class="opportunities">
+            <a href="/opportunitiesTeaching" style="text-decoration: none;">
+            <div class="opportunity-card">
+                <h3>Teaching</h3>
+                
+                <div class="pname" name="teaching" id="teaching">
+                    <img src="teaching.webp" class="teaching" alt="">
+                </div>
+                <p>Volunteer in teaching activities inorder to share knowledge and skills to support the education of
+                    others, often in underprivileged or resource-limited settings. It fosters personal growth, community
+                    impact, and the joy of helping others learn.</p>
+            </div>
+            </a>
+            <a href="/opportunitiesCalamities" >
+            <div class="opportunity-card">
+                <h3>Natural Calamities</h3>
+                <div class="pname" name="calamities" id="calamities">
+                    <img src="naturalcalamities.png" class="teaching" alt="">
+                </div>
+                <p>Volunteering during natural calamities involves providing aid and support to affected communities
+                    through rescue efforts, relief distribution, and rebuilding.
+                    Such acts of service demonstrate compassion, resilience, and solidarity in times of crisis.</p>
+            </div>
+        </a>
+        <a href="/opportunitiesPublicHealth">
+            <div class="opportunity-card">
+                <h3>Public Health</h3>
+                <div class="pname" name="publichealth" id="publichealth">
+                    <img src="publichealth.png" class="teaching" alt="">
+                </div>
+                <p>Volunteering during natural calamities involves providing aid and support to affected communities
+                    through rescue efforts, relief distribution, and rebuilding
+
+                    Such acts of service demonstrate compassion, resilience, and solidarity in times of crisis.</p>
+            </div>
+        </a>
+        <a href="/opportunitiesWomenEmpowerment">
+            <div class="opportunity-card">
+                <h3>Women Empowerment</h3>
+                <div class="pname" name="womenempowerment" id="womenempowerment">
+                    <img src="womenempowerment.png" class="teaching" alt="">
+                </div>
+                <p>Volunteering in women empowerment involves supporting initiatives that promote gender equality, education, and economic independence for women.
+
+                    Such efforts foster inclusive communities and inspire positive societal change.</p>
+            </div>
+        </a>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <div>
+                <img src="Logo.png">
+            </div>
+            <div class="contact-info">
+                <h3>CONTACT US:</h3>
+                <p>9898989898</p>
+            </div>
+            <div class="contact-info">
+                <h3>NEPAL</h3>
+                <p>herohub@gmail.com</p>
+                <p>kathmandu,Nepal</p>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,94 @@
+<% layout('../layouts/boilerplate') -%>
+<style>
+  nav{
+    z-index: 5;
+  }
+  .applybox {
+    box-sizing: border-box;
+    width: 70vw;
+    height: 25vh;
+    margin: 0 auto;
+    padding: 25px;
+    background-color: #f1f1f1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center; 
+    border: 2px solid rgb(209, 70, 70);
+    position: relative;
+    border-radius: 14px;
+}
+
+.applytext {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.applybox .heading {
+    font-size: 2rem;
+    margin-bottom: 3rem;
+    font-weight: 700;
+    text-decoration: none;
+    color: #000;
+    position: relative;
+}
+
+
+.applybox .paragraph {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    font-weight: 400;
+    position: relative;
+    top: -1rem;
+}
+
+.applybtn {
+    align-self: center;
+    padding: 0.5rem 1rem;
+    background-color: #d63131;
+    border-radius: 14px;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 400;
+    transition: all 0.3s ease;
+}
+
+.applybtn:hover {
+    background-color: #fffdfd;
+    color: #000000;
+}
+
+@media screen and (max-width: 768px) {
+    .applybox {
+        height: 40vh;
+        justify-content: space-around;
+    }
+
+    .applytext {
+        padding: 0 2rem;
+    }
+}
+</style>
+<body >
+  <h3 >VOLUNTEERS NEEDED FOR....</h3>
+  <div>
+    <% for(let listing of allListings){ %>
+        <div class="applybox">
+            <div class="applytext">
+              <div>
+                <div class="heading"><%=listing.title%></div>
+              </div>
+              <div>
+                <div class="paragraph"><%=listing.topic%></div>
+              </div>
+            </div>
+            <button class="applybtn"><a href="/listings/<%=listing._id%>">View Details</a></button>
+        </div>
+        <br>
+    <%}%>
+  </div>
+
+</body>

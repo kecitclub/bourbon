@@ -1,0 +1,43 @@
+<% layout('../layouts/boilerplate') -%>
+<%= success %>
+<body>
+  <h3>All Listings</h3>
+  <!-- <form method ="get" action="/listings/new">
+        <button>Create New Post</button>
+    </form> -->
+  <div class="row row-cols-lg-3 row-cols-md-2 row-cols-sm-1">
+      <% for(let listing of allListings){ %>
+    <a href="/listings/<%= listing._id %>" class="listing-link">
+    <div class="card" >
+      <img src="<%= listing.image.url%>" class="card-img-top" alt="..." />
+      <div class="card-img-overlay"></div>
+      <div class="card-body">
+        <p class="card-text"><b><%= listing.title%></b></p>
+        <p class="card-text">Rs.<%= listing.price%></p>
+      </div>
+    </div>
+ </a>
+    <%}%>
+  </div>
+
+
+  <ul>
+    <% for(let listing of allListings){ %>
+    <li><a href="/listings/<%= listing._id%>"><%= listing.title%></a></li>
+    <%}%>
+  </ul>
+</footer>
+<footer style="position: relative; background-color: #aea299;">
+      <div class="f-info-socials">
+          <a href="https://www.facebook.com/"><i class="fa-brands fa-square-facebook"></i></a>
+          <a href="https://www.instagram.com/"> <i class="fa-brands fa-square-instagram"></i></a>
+          <a href="https://www.linkedin.com/"> <i class="fa-brands fa-linkedin"></i></a>
+      </div>
+      <div>&copy;HeroHub</div>
+      <div class="f-info-links">
+          <a href="/privacy">Privacy</a>
+          <a href="/terms">Terms</a>
+      </div>
+  </div>
+</footer>
+</body>
